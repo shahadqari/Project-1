@@ -1,0 +1,37 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lucida', sans-serif;
+  background-image: url("project_1.samaher_1.jpg");
+}
+div.bg {
+background-image: src="images/samaher_1.jpg";
+position: relative;
+ left: 0px;
+    top: 0px;
+  width: 50%;
+  height: 50%;
+}
+
+}
+.bar div {
+    background-color: lightgrey;
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+nav {
+
+height: 100px;
+    width:100%;
+    background-color: #2898c8;
+    padding-top: 10px;
+
+}
+.about{
+padding-top: 30px;
+padding-right: 100px;
+float: right;
+
+}
