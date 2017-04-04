@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+<script>
+  var number1 = 20;
+  var number2 = 30;
+
+  // var sum = number1 + number2;
+  // console.log(sum);
+
+  function logToConsole() {
+    console.log(sum);
+  }
+
+  function logSum(a, b) {
+    var sum = a+b; // THIS SUM IS NOT THE SAME AS THE SUM ABOVE IT
+    console.log(sum);
+    // EVERY FUNCTION HAS IT'S OWN SCOPE OF VARIABLES
+  }
+  logSum(number1, number2);
+
+  var sumGlobal = logSum(number1, number2);
+  console.log(sumGlobal);
+
+  function giveMeSum(a, b) {
+    return a+b;
+  }
+  sumGlobal = giveMeSum(10, 15.08);
+
+</script>
+
+
+</body>
+</html>

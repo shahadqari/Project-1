@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <div class="keys">
+    <div data-key="65" id="key-a" class="key">
+      <kbd>A</kbd>
+      <span class="sound">clap</span>
+    </div>
+    <div data-key="83" id="key-s" class="key">
+      <kbd>S</kbd>
+      <span class="sound">hihat</span>
+    </div>
+    <div data-key="68" id="key-d" class="key">
+      <kbd>D</kbd>
+      <span class="sound">kick</span>
+    </div>
+    <div data-key="70" id="key-f" class="key">
+      <kbd>F</kbd>
+      <span class="sound">openhat</span>
+    </div>
+    <div data-key="71" id="key-g" class="key">
+      <kbd>G</kbd>
+      <span class="sound">boom</span>
+    </div>
+    <div data-key="72" id="key-h" class="key">
+      <kbd>H</kbd>
+      <span class="sound">ride</span>
+    </div>
+    <div data-key="74" id="key-j" class="key">
+      <kbd>J</kbd>
+      <span class="sound">snare</span>
+    </div>
+    <div data-key="75" id="key-k" class="key">
+      <kbd>K</kbd>
+      <span class="sound">tom</span>
+    </div>
+    <div data-key="76" id="key-l" class="key">
+      <kbd>L</kbd>
+      <span class="sound">tink</span>
+    </div>
+  </div>
+
+  <audio data-key="65" id="audio-a" src="sounds/clap.wav"></audio>
+  <audio data-key="83" id="audio-s" src="sounds/hihat.wav"></audio>
+  <audio data-key="68" id="audio-d" src="sounds/kick.wav"></audio>
+  <audio data-key="70" id="audio-f" src="sounds/openhat.wav"></audio>
+  <audio data-key="71" id="audio-g" src="sounds/boom.wav"></audio>
+  <audio data-key="72" id="audio-h" src="sounds/ride.wav"></audio>
+  <audio data-key="74" id="audio-j" src="sounds/snare.wav"></audio>
+  <audio data-key="75" id="audio-k" src="sounds/tom.wav"></audio>
+  <audio data-key="76" id="audio-l" src="sounds/tink.wav"></audio>
+
+<script>
+  window.addEventListener("keydown", function(e) {
+    console.log(e.keyCode);
+    if (e.keyCode == 65) {
+      var audio = document.getElementById("audio-a");
+      if (!audio) return;
+
+
+      var key = document.getElementById("key-a");
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add("playing");
+    }
+  });
+
+  function removeTransition(e) {
+    if (e.propertyName !== "transform") return;
+    // console.log(e.propertyName);
+    this.classList.remove("playing");
+  }
+
+  var keyA = document.getElementById("key-a");
+  keyA.addEventListener("transitionend", removeTransition);
+</script>
+
+
+</body>
+</html>
